@@ -88,6 +88,52 @@
             string ageOutput = $"Oh, so you are {userAge} years old, great!.... I think...";
             Console.WriteLine(ageOutput);
 
+
+            // Operators!
+            // Assignment Operators.
+            string exampleOperator = "I'm an assignment operator!";
+
+            int numberExample = 5;
+            numberExample = numberExample + 3;
+            numberExample += 3;
+
+            numberExample = numberExample - 3;
+            numberExample -= 3;
+
+            numberExample /= 3;
+            numberExample *= 3;
+
+            numberExample = numberExample % 3;
+            numberExample %= 3;
+
+            // Arithmetic Operators
+            // 3 * (x + 2) - 2 * (x - 2)
+
+            int numberExample2 = 3 + 3;
+            numberExample2 = 3 - 3;
+            numberExample2 = 3 * 3;
+            numberExample2 = 5 / 3; // if you divide with an integer type,
+            // you LOSE the remainder value. because there IS no 
+            // decimals in this context
+
+            numberExample2 = 5 % 3;
+
+            // mod even number example
+            int modExample = 2 % 2; // remainder 0... divides evenly
+            modExample = 13 % 2; // remainder 1 .. NOT even
+
+            // incrementor decrementor, assignment operators
+            int i = 0;
+            i = i + 1;
+            i += 1;
+            i++; // incrementor is adding 1 to i.
+
+            int j = 0;
+            j = j - 1;
+            j -= 1;
+            j--; // decrementor is subtracting 1 to j.
+
+
             Console.WriteLine("Hello, World!");
         }
     }
