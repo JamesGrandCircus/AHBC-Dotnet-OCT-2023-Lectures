@@ -133,6 +133,15 @@
             j -= 1;
             j--; // decrementor is subtracting 1 to j.
 
+            // --j, and j-- are different operations,
+            // --j will subtract AFTER asignment
+            // j-- will subtract BEFORE assignemnt,
+            // this is only relevant if you want to store the results
+            // if that assignment in a DIFFERENT variable.
+            // if j = 2
+            int jReallyNew = j--; //  1
+            int jReallyOld = --j; //  2
+
 
             Console.WriteLine("Hello, World!");
         }
