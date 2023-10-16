@@ -6,6 +6,8 @@ namespace Unit_2___Methods__Functions_
     {
         static void Main(string[] args)
         {
+            ExersizeOne();
+
             Console.WriteLine("Hello, World!");
 
             // variables should be named as if they are nouns... 
@@ -64,6 +66,10 @@ namespace Unit_2___Methods__Functions_
             int otherValidResult = GetValidNumber("how old are you!");
         }
 
+        static void ExersizeOne()
+        {
+            // literally the entire exersize here
+        }
 
         // A function (or method.... curse oop!) is a block
         // of SELF contained code that optionally has Input / Output
