@@ -114,25 +114,25 @@ namespace Unit_2___Strings
             string fullName = "James B. Jackson";
             int index = fullName.IndexOf(".");
 
-            int lastInde = fullName.LastIndexOf("J");
+            int lastInde = fullName.LastIndexOf("J"); // ➡️ 9, the Last instance of 'J' in fullName lives at index 9
 
-            bool endsWithLastName = fullName.EndsWith("Jackson");
+            bool endsWithLastName = fullName.EndsWith("Jackson"); // ➡️ True, fullName does end with "Jackson"
 
-            string kInsteadOfJName = fullName.Replace("Ja", "Ku");
+            string kInsteadOfJName = fullName.Replace("Ja", "Ku"); // ➡️ { "Kumes B", " Kuckson" }
 
-            string[] namesInCollection = fullName.Split('.');
+            string[] namesInCollection = fullName.Split('.'); // ➡️ { "James B", " Jackson" }
 
             string[] phoneNumberParts = "123-456-4565".Split('-'); // ➡️ { "123", "456", "4565"}
 
-            string[] otherSplitExample = "James-.-B-.-Jackson".Split("-.-");
+            string[] otherSplitExample = "James-.-B-.-Jackson".Split("-.-"); // ➡️ { "James", "B", "Jackson"} , we are removing the "-.-"
 
-            int indexOfMiddleInitial = fullName.IndexOf('.') - 1;
-            string hopefullyMiddleInitialOnly = fullName.Substring(indexOfMiddleInitial, 2);
-            string copiedFullName = fullName.Substring(0, fullName.Length - 1);
+            int indexOfMiddleInitial = fullName.IndexOf('.') - 1; // ➡️ 6, the period lives at index 7 - 1 is 6
+            string hopefullyMiddleInitialOnly = fullName.Substring(indexOfMiddleInitial, 2); // ➡️ "B."
+            string copiedFullName = fullName.Substring(0, fullName.Length - 1); // ➡️ "James Jackso", omitting the last character
 
             //                012
             string example = "Ace"; // Length is 3, we can literally count the characters
-            char lastLetter = example[example.Length - 1];
+            char lastLetter = example[example.Length - 1]; // ➡️ 'n', the last character of fullName is 'n'
         }
 
         // Lets clean those strings up!
@@ -148,18 +148,15 @@ namespace Unit_2___Strings
             string[] betweenOrOther = otherUserInput.Split(' ');
 
             // removing the in between whitespace from otherUserInput
-            int startingIndexSpace = otherUserInput.IndexOf(' ');
-            int endingIndexSpace = otherUserInput.LastIndexOf(' ');
-            string startingWord = otherUserInput.Substring(0, startingIndexSpace);
-            string endingWord = otherUserInput.Substring(endingIndexSpace);
-            string hopefullyCleanString = $"{startingWord} {endingWord}";
+            int startingIndexSpace = otherUserInput.IndexOf(' '); // ➡️ 6, the first white space is at index 6
+            int endingIndexSpace = otherUserInput.LastIndexOf(' '); // ➡️ 18, the last white space is at index 18
+            string startingWord = otherUserInput.Substring(0, startingIndexSpace); // ➡️ "James" starting at index zero, get characters all the way to the first whitespace 6
+            string endingWord = otherUserInput.Substring(endingIndexSpace); // ➡️ "Jackson", starting at index 18, go all the way to the rest of the string
+            string hopefullyCleanString = $"{startingWord} {endingWord}"; // ➡️ "James Jackson", combine starting word with ending word and put a white space in between
 
             // more on Regex later!
             Regex pattern = new Regex(@"\w"); // white space regular expression
-            pattern.Replace(otherUserInput, string.Empty);
-
-            //.. or just...
-            string cleanString = otherUserInput.Remove(startingIndexSpace, endingIndexSpace);
+            string replacedNamed = pattern.Replace(otherUserInput, string.Empty); // replace all white spaces with nothing, more on Regex later
         }
 
         // String Building
