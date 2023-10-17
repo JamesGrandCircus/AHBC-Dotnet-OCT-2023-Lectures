@@ -22,8 +22,8 @@ namespace Unit_2___Strings
             //RunStringExampleTwo();
             //RunStringExampleThree();
             //RunStringExampleFour();
-            //RunStringExampleFive();
-            RunStringExampleSix();
+            RunStringExampleFive();
+            //RunStringExampleSix();
         }
 
 
@@ -155,7 +155,7 @@ namespace Unit_2___Strings
             string hopefullyCleanString = $"{startingWord} {endingWord}"; // ➡️ "James Jackson", combine starting word with ending word and put a white space in between
 
             // more on Regex later!
-            Regex pattern = new Regex(@"\w"); // white space regular expression
+            Regex pattern = new Regex(@"\s"); // white space regular expression
             string replacedNamed = pattern.Replace(otherUserInput, string.Empty); // replace all white spaces with nothing, more on Regex later
         }
 
