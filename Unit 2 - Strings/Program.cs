@@ -157,6 +157,9 @@ namespace Unit_2___Strings
             // more on Regex later!
             Regex pattern = new Regex(@"\s"); // white space regular expression
             string replacedNamed = pattern.Replace(otherUserInput, string.Empty); // replace all white spaces with nothing, more on Regex later
+
+            Regex capitalPattern = new Regex(@"[A-Z]");
+            var thing = capitalPattern.Matches(replacedNamed);
         }
 
         // String Building
