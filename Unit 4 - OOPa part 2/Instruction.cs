@@ -13,7 +13,6 @@ namespace Unit_4___OOPa_part_2
             var room = new Room(10, 12);
 
             Console.WriteLine(room.Area); 
-
         }
     }
 }

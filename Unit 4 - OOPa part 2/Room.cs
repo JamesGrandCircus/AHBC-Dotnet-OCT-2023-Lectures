@@ -98,5 +98,7 @@
         {
             return Length * _width * _height;
         }
+
+        // the main use case for Static is for Exention methods, and private methods
     }
 }
