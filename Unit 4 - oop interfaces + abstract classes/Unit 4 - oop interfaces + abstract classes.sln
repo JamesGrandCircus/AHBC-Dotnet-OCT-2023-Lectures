@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit 4 - oop interfaces + abstract classes", "Unit 4 - oop interfaces + abstract classes.csproj", "{BDD09D9D-40D1-460B-8071-5B08DA37586D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDD09D9D-40D1-460B-8071-5B08DA37586D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD09D9D-40D1-460B-8071-5B08DA37586D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD09D9D-40D1-460B-8071-5B08DA37586D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD09D9D-40D1-460B-8071-5B08DA37586D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DCFA5F2-6517-4A45-9E8D-50E5AC01F1F3}
+	EndGlobalSection
+EndGlobal
