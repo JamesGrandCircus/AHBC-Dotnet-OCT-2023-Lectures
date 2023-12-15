@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            
+            var orders = new List<Order>();
+            orders.Add(new Order(1, "Acme Hardware", DateTime.Parse("8/1/2020"), "Mouse", 25, 3, 75M));
         }
 
         static void RunExampleOne()
