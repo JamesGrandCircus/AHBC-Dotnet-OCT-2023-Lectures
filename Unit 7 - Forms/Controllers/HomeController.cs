@@ -17,6 +17,7 @@ namespace Unit_7___Forms.Controllers
 
         public IActionResult Index()
         {
+            var total = AddTwoNumbers(1, 2);
             return View();
         }
 
@@ -45,6 +46,11 @@ namespace Unit_7___Forms.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private int AddTwoNumbers(int x, int y)
+        {
+            return x + y;
         }
     }
 }

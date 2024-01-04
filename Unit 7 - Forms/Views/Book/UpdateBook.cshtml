@@ -1,41 +1,39 @@
 ﻿@model Unit_7___Forms.Models.CreateBookViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "View";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>View</h1>
 
 <h4>CreateBookViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-controller="Book" asp-action="Create" method="post">
-
+        <form asp-action="UpdateBook">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="Id" class="form-control" type="hidden" disabled/>
+
             <div class="form-group">
                 <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />  @* input fields is where the USER will type INFORMATION INTO! *@
+                <input asp-for="Author" class="form-control" />
                 <span asp-validation-for="Author" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="Genre" class="control-label"></label>
                 <input asp-for="Genre" class="form-control" />
                 <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" /> @* if an input element is of type submit or button, it renders as a button *@
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
-
         </form>
     </div>
 </div>
