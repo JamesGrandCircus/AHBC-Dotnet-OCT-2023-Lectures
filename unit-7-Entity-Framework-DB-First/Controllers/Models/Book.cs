@@ -6,6 +6,5 @@
         public string Author { get; set; }
         public string Title { get; set; }
         public bool CheckedOut { get; set; }
-        public DateTime CheckoutDate { get; set; }
     }
 }

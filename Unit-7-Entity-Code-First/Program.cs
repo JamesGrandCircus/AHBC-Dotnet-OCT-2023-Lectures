@@ -1,8 +1,7 @@
-using unit_7_Entity_Framework_DB_First.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Unit_7_Entity_Code_First.Services;
 
-namespace unit_7_Entity_Framework_DB_First
+namespace Unit_7_Entity_Code_First
 {
     public class Program
     {
@@ -11,16 +10,13 @@ namespace unit_7_Entity_Framework_DB_First
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            // Services are DEPENDENCIES!!!!!
-            // ALL CONTROLLERS AND VIEWS ARE DEPENDENCIES
-            // Dependency == Service
             builder.Services.AddControllersWithViews();
 
-            // the only way a Dependency can ACCESS another Dependency (or service)
-            // is IF both Services EXIST in your SERVICES COLLECTION
-            builder.Services.AddDbContext<LibraryContext>(options => 
-                   options.UseSqlServer("Server=JIMMY-PC\\SQLEXPRESS;Database=Library;Trusted_Connection=True;MultipleActiveResultSets=true;")
-             );
+            // adding my TodoContext to my Services collecti on (aka. Dependancy)
+            builder.Services.AddDbContext<TodoContext>(options =>
+            {
+                options.UseSqlServer("Server=JIMMY-PC\\SQLEXPRESS;Database=Todos;Trusted_Connection=True;MultipleActiveResultSets=true;");
+            });
 
             var app = builder.Build();
 
