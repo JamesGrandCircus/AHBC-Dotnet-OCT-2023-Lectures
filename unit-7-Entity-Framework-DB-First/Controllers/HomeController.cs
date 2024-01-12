@@ -48,12 +48,11 @@ namespace unit_7_Entity_Framework_DB_First.Controllers
 
 
         [HttpPost]
-        public IActionResult Edit(Book bookFormData, int id)
+        public IActionResult Edit(Book bookFormData, int id) // I ddon't need this ROUTE PARAMTER
         {
-            bookFormData.Id = id;
             _libraryDatabase.Books.Update(bookFormData);
             _libraryDatabase.SaveChanges();
-            
+
             return RedirectToAction(nameof(Books));
         }
 
