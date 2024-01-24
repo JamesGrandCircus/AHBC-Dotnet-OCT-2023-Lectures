@@ -12,6 +12,8 @@ namespace Unit_8_consuming_apis
             builder.Services.AddControllersWithViews();
             builder.Services.AddHttpClient<DogService>(client =>
             {
+                // the BAse address is the BASE url for the HTTP api service
+                // you will be working with
                 client.BaseAddress = new Uri("https://dog.ceo/api/");
             });
             var app = builder.Build();

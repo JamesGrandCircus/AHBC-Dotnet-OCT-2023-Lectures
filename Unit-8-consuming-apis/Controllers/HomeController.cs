@@ -19,7 +19,7 @@ namespace Unit_8_consuming_apis.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var dogImage = await _dogService.GetRandomDogImage();
+            var dogImage =  await _dogService.GetRandomDogImage();
             var model = new IndexViewModel();
             model.ImageSrc = dogImage;
             return View(model);

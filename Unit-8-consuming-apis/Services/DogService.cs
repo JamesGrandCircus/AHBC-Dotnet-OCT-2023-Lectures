@@ -1,5 +1,12 @@
 ﻿namespace Unit_8_consuming_apis.Services
 {
+    interface IDoThing
+    {
+        void DoThing();
+    }
+
+
+
     // always name your services related to the ACTUAL 
     // api serrvice you will communicating... this is OOP
     public class DogService
@@ -12,6 +19,8 @@
             _client = client;
         }
 
+        // A TASK of nothing (no angle brackets) is just an ASYNC void method
+        // the method does something, but returns NOTHING
         public async Task<string> GetRandomDogImage()
         {
             // the way you read the Task type, is a Task is the 
@@ -41,8 +50,7 @@
                 // Content == Body
                 // this method will READ the JSON and CONVERT into a C# OBject
                 // FOR YOU!!!
-                var dogImageMessage = await httpResponseMessage.Content.ReadFromJsonAsync<DogImageMessage>();
-                
+                DogImageMessage dogImageMessage = await httpResponseMessage.Content.ReadFromJsonAsync<DogImageMessage>();
                 return dogImageMessage.message;
             }
             else
