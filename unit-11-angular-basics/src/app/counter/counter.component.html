@@ -1,0 +1,13 @@
+<div class="counter">
+    <p>value: {{value}}‼️</p>
+<!-- 
+    with event binding, we describe the EVENT we are 
+    LISTENING TOO with '()' in the parenthesis is 
+    the ACTUAL event you are LISTENING TOO!
+    you then ASSIGN the event with a METHOD/FUNCTION 
+    defined in your *.component.ts class -->
+    <div>
+      <button app-button (click)="increment()" >➕</button>
+      <button app-button (click)="decrement()" >➖</button>
+    </div>
+  </div>

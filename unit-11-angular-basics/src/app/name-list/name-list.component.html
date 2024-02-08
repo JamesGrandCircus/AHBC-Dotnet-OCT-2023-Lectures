@@ -1,0 +1,11 @@
+@if (names.length) {
+    <ul>
+      <!-- track is used to tell angular IF it should re-render 
+      the item in the loop -->
+      @for (name of names; let idx = $index; track idx; ) {
+        <li>{{name}}</li>
+      }
+    </ul>
+  } @else {
+    <p>no names to display</p>
+  }

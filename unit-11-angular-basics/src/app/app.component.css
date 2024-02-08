@@ -1,0 +1,52 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #e3dbdb;
+  gap: 1rem;
+
+  p {
+    font-size: 4rem;
+  }
+
+  .counter {
+    border: solid black 1px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    div {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      button {
+        border: solid black 1px;
+        background-color: white;
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0.25rem;
+    border: solid black 1px;
+    flex-direction: column;
+
+    li {
+      font-size: 1.25rem;
+    }
+  }
+}

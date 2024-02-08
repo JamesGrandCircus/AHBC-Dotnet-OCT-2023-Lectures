@@ -1,0 +1,24 @@
+<main>
+  <!-- property binding is how we READ data in the html / template -->
+  <!-- the property itself comes from the *.component.ts file -->
+  <!-- where the '*' is the current component name you are working with, same as the html -->
+  <p>this is the title of this app: {{title}}</p>
+
+  <!-- this is the selector for a totally seperate component -->
+  
+  <!-- the HTML OF THE COMPONENT IS RENDERED HERE -->
+  
+  <!-- attribute binding allows you to PASS data from your 
+  parent component TO your child component, put the 
+  name of the input property in square brackets,
+  then put the value you want to pass in quotes -->
+  <app-counter [value]="5"></app-counter>
+  <app-counter [value]="69" ></app-counter>
+  <app-counter [value]="420"></app-counter>
+  <!-- this is known as Uni-directional DATA flow, you are 
+  PASSING data parent to child, but not the other way -->
+
+  <app-name-list [names]="beatles"></app-name-list>
+  <app-name-list [names]="students"></app-name-list>
+
+</main>

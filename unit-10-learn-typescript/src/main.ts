@@ -113,6 +113,7 @@ function runApp() {
     // if it exists, ANYTIME the user clicks on this BUTTON,
     // the function will be called
     incrementorButton.addEventListener('click', () => {
+      console.log(incrementorButton);
       value++;
       counterElement.innerHTML = value.toString();
     })

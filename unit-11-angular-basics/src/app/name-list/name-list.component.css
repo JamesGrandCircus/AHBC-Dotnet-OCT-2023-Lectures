@@ -1,0 +1,13 @@
+ul {
+  background-color: white;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0.25rem;
+  border: solid black 1px;
+  flex-direction: column;
+
+  li {
+    font-size: 1.25rem;
+  }
+}

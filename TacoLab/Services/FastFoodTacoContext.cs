@@ -5,6 +5,8 @@ namespace TacoLab.Services
 {
     public class FastFoodTacoContext : DbContext
     {
+        //                                                  in javascript
+        //                                                  this would be called super()
         public FastFoodTacoContext(DbContextOptions options) : base(options)
         {
             
