@@ -12,13 +12,21 @@
   parent component TO your child component, put the 
   name of the input property in square brackets,
   then put the value you want to pass in quotes -->
-  <app-counter [value]="5"></app-counter>
-  <app-counter [value]="69" ></app-counter>
-  <app-counter [value]="420"></app-counter>
+  <app-counter (valueChange)="handleValueChange($event)" [value]="5"></app-counter>
+  <app-counter (valueChange)="handleValueChange($event)" [value]="69" ></app-counter>
+  <app-counter (valueChange)="handleValueChange($event)" [value]="420"></app-counter>
   <!-- this is known as Uni-directional DATA flow, you are 
   PASSING data parent to child, but not the other way -->
 
-  <app-name-list [names]="beatles"></app-name-list>
+  <p>Latest counter child value change: {{latestChildCounterValue}}</p>
+
+  <app-name-list class="list" [names]="beatles"></app-name-list>
   <app-name-list [names]="students"></app-name-list>
+
+  <app-card>
+    <div class="card">
+    </div>
+  </app-card>
+
 
 </main>

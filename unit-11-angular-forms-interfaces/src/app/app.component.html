@@ -1,0 +1,42 @@
+<!-- when submit forms in ANGULAR, you use a javascript function, not a POST -->
+<!-- CANNOT STRESS THIS ENOUGH, you DO NOT MAKE AN HTTP POST WHEN SUBMITTING FORMS IN ANGULAR! -->
+<form (ngSubmit)="handleSubmit()">
+
+  <label for="name">Name</label>
+  <!-- anytime the USER changes ANY DATA in this input field, it will
+  AUTOMATICALLY update the name property in the component class BECAUSE of the
+  [(ngModel)]="name" banana in the box -->
+  <input type="text" name="name" [(ngModel)]="name" />
+
+  <label for="author">Author</label>
+  <input type="text" name="author" [(ngModel)]="author" />
+
+  <label for="checkedOut">Checked Out</label>
+  <input type="checkbox" name="checkedOut" [(ngModel)]="checkedOut" />
+
+  <button type="submit">SUBMIT</button>
+
+</form>
+
+@if (books.length > 0) {
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Checked Out</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (book of books; track book.name) {
+        <tr>
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.checkedOut }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <p>No books found</p>
+}

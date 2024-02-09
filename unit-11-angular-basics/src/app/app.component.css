@@ -1,5 +1,6 @@
 main {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -7,6 +8,7 @@ main {
   width: 100vw;
   background-color: #e3dbdb;
   gap: 1rem;
+  overflow-y: auto;
 
   p {
     font-size: 4rem;
@@ -49,4 +51,16 @@ main {
       font-size: 1.25rem;
     }
   }
+}
+
+.card {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 0.25rem;
+  background-color: greenyellow;
+}
+
+.list {
+  background-color: blue;
+  padding: 2rem;
 }

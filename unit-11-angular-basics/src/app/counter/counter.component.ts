@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -20,11 +20,18 @@ export class CounterComponent {
   // this is basically like adding a "parameter" to a method
   @Input() value = 0;
 
+
+  // output is how the Child component communicates with the Parent component
+  @Output() valueChange = new EventEmitter<number>();
+
   increment() {
     this.value++;
+    // firing off the event to the parent component!
+    this.valueChange.emit(this.value);
   }
 
   decrement() {
     this.value--;
+    this.valueChange.emit(this.value);
   }
 }

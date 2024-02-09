@@ -1,6 +1,20 @@
-button {
+/* the host selector, is a special selector provided by Angular, that allows you to apply styles
+to the SELECTOR associated with this component! */
+:host {
   border: solid black 1px;
   background-color: white;
-  padding: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c0bcbc;
+  }
+
+  &:active {
+    background-color: #c5e5ec;
+  }
 }

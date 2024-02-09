@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CounterComponent } from './counter/counter.component';
 import { NameListComponent } from './name-list/name-list.component';
 import { ButtonComponent } from './button/button.component';
+import { CardComponent } from './card/card.component';
 
 // Component Decorator, this tells Angular that this class is a component
 // the component decorator takes a configuration object with the following properties
@@ -18,7 +19,8 @@ import { ButtonComponent } from './button/button.component';
     RouterOutlet,
     NameListComponent,
     CounterComponent,
-    ButtonComponent
+    ButtonComponent,
+    CardComponent
   ],
 
   // this is the path to the components html file
@@ -36,6 +38,7 @@ export class AppComponent {
   // your members HAVE TO BE PUBLIC in order for the template to access them!
   title = 'unit-11-angular-basics';
   value = 0;
+  latestChildCounterValue = 0;
   beatles = ['John', 'Paul', 'George', 'Ringo'];
   students = ['Peggy', 'Frank', 'Nathaniel', 'Lauren', 'David', 'Aimee', 'Benjamin', 'Angela'];
 
@@ -53,6 +56,10 @@ export class AppComponent {
   }
   // any data / members you want to render in the html file
   // HAS to live in the class itself
+
+  handleValueChange(value: number) {
+    this.latestChildCounterValue = value;
+  }
 }
 
 // by convention, the app.component is the ENTRY POINT COMPONENT for the rest of your application!
