@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* global reset, reset all elements to have speicific styles that make sense for your application */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #f857a6, #ff5858);
+  display: flex;
+  justify-content: center;
+}
+
+/* div[class] {
+  background-color: limegreen;
+} */

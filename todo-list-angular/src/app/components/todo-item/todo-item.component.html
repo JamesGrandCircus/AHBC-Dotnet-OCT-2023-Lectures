@@ -1,0 +1,20 @@
+<div>
+	@if (!todo.completed) {
+	<button app-button (click)="completeTask(index)">complete</button>
+	}
+
+	<!-- you can conditionally apply a class to an element using the [class.classname] syntax -->
+	<p [class.completed]="todo.completed">{{ todo.task }}</p>
+	<p>({{todo.duration | number: '1.1-2' }} hr)</p>
+
+	@switch (todo.priority) {
+	@case ('HIGH') {
+		<span class="high-priority text-small">↑ High Priority</span>
+	}
+	@case ('LOW') {
+		<span class="low-priority text-small">↓ Low Priority</span>
+	}
+	}
+</div>
+
+<button (click)="deleteTask(index)" class="delete-btn">X</button>

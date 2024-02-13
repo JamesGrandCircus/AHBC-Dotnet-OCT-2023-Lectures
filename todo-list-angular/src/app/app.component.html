@@ -1,0 +1,30 @@
+
+<div class="list-container">
+
+  <header>
+    <h1>To-Do List</h1>
+    <p>A place to store your todos</p>
+  </header>
+
+  <ol>
+    @for (todo of todos; track todo.task; let index = $index) {
+      <li>
+        <app-todo-item 
+          [todo]="todo" 
+          [index]="index" 
+          (delete)="deleteTask($event)"
+          (completeTheTask)="completeTask($event)">
+        </app-todo-item>
+      </li>
+    }
+  </ol>
+</div>
+
+<!-- <ul>  OLD WAY, for new way, take the ngFor loop out of the element, and to the ABOVE loop instead! also 
+  don'T forget to remove the "let" keyword
+
+  <li *ngFor="let todo of todos; trackBy: trackByFn">
+    {{ todo.task }}
+    <button *ngIf="!todo.completed">complete</button>
+  </li>
+</ul> -->

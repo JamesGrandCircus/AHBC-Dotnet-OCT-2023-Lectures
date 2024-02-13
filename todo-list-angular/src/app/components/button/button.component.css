@@ -1,0 +1,11 @@
+/* this selector is GOING TO CHANGE! */
+:host {
+  border: 1px solid #ff69b4;
+  border-radius: 0.25rem;
+  color: #ff69b4;
+  background-color: transparent;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}

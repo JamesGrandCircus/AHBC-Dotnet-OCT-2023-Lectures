@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.high-priority {
+  color: crimson;
+}
+
+.low-priority {
+  color: darkgoldenrod;
+}
+
+.text-small {
+  font-size: 0.75rem;
+  line-height: 1.375rem;
+}
+
+.completed {
+  text-decoration: line-through;
+}
