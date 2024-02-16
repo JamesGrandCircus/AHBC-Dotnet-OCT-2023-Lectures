@@ -1,0 +1,20 @@
+<h1>THis is your book!</h1>
+
+<p>The ID for your book is! {{id}}, this came from manually subscribing to the params observable</p>
+
+
+<!-- using the async pipe, Angular will handle the params$ subscription for you! -->
+@if (params$ | async; as params) {
+	<p>The ID for your book is {{params['id']}}, this params object, comes from the async pipe</p>
+}
+
+@if(name) {
+	<p>This is your name {{name}}</p>
+}
+
+<!-- using the async pipe, Angular will handle the params$ subscription for you! -->
+@if (queryParams$ | async; as queryParams) {
+	@if (queryParams['name']) {
+		<p>The ID for your book is {{queryParams['name']}}, this params object, comes from the async pipe</p>
+	}
+}

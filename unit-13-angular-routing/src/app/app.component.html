@@ -1,0 +1,9 @@
+<nav>
+  <a routerLink="contact">Contact</a>
+  <a routerLink="about-me">About Me</a>
+  <button (click)="routeToBook(1)">Book 📖</button>
+  <a routerLink="book/69" [queryParams]="{name: 'really Cool Guy lol'}">NSFW Book</a>
+</nav>
+
+
+<router-outlet />

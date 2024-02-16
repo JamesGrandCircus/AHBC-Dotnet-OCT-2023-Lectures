@@ -1,0 +1,15 @@
+nav {
+  padding-left: 1rem;
+  display: flex;
+  gap: 1rem;
+  background-color: rgb(70, 66, 66);
+}
+
+a {
+  color: lightblue;
+  cursor: pointer;
+  text-decoration: underline;
+  &:visited {
+    color: lightpink;
+  }
+}
