@@ -14,6 +14,23 @@ namespace Unit_9_API
             // we only use AddControllers NOT AddControllrsWithViews()
             builder.Services.AddControllers();
 
+            // ADD CORS as a serivce!
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    policy =>
+                    {
+                        //replace localhost with yours
+                        //also add your deployed website
+                        policy.WithOrigins("http://localhost:4200",
+                            // you can put in MULTIPLE urls, this is A WAY to 
+                            // solve for multiple environments! more on that later
+                                            "https://MyChatRoom.com")
+                        .AllowAnyMethod() // method in this context means GET, POST, PUT, DELETE, etc. 
+                        .AllowAnyHeader();
+                    });
+            });
+
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer(); // these two services come with making a new api app.
@@ -33,6 +50,9 @@ namespace Unit_9_API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            // use that CORS service in MIDDLEWARE, more on MIDDLEWARE later!
+            app.UseCors();
 
             app.UseHttpsRedirection();
 

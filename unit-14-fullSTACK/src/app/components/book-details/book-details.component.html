@@ -1,0 +1,11 @@
+@if (book !== null) {
+	<div>
+		<h2>Title: {{ book.title }}</h2>
+		<p>Author: {{ book.author }}</p>
+		<p>Checked out?: {{ book.checkedOut }}</p>
+	</div>
+} @else {
+	<div>
+		<h2>checking out book...</h2>
+	</div>
+}

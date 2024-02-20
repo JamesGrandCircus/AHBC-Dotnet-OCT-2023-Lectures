@@ -28,7 +28,7 @@ namespace Unit_9_API.Controllers
             return Ok(response);
         }
 
-        // GET api/<LibraryController>/5
+        // GET api/Library/5
         [HttpGet("{id}")]
         public IActionResult Get([FromRoute] int id)
         {

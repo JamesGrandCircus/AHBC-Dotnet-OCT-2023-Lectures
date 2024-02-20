@@ -1,0 +1,28 @@
+@if (books$ | async; as books) {
+	<table>
+	  <thead>
+		<tr>
+		  <th>Title</th>
+		  <th>Author</th>
+		  <th>Checked</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		@for (book of books; track book.id) {
+		  <tr>
+			<td>{{ book.title }}</td>
+			<td>{{ book.author }}</td>
+			<td>{{ book.checkedOut }}</td>
+			<td>
+				<!-- this component exist inside of a router outlet,
+				if you decide to use the routerLink directive, you will,
+				you will be default be using a subroute, ie, it will ALWAYS
+				include book/ first because THIS COMPONENT already 
+				exist inside of a router outlet -->
+				<button (click)="routeToBook(book.id)">Details</button>
+			</td>
+		  </tr>
+		}
+	  </tbody>
+	</table>
+  }
