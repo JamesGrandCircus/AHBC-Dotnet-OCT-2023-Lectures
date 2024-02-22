@@ -1,10 +1,13 @@
+<a [routerLink]="'/add-book'">ADD 📖</a>
+
 @if (books$ | async; as books) {
 	<table>
 	  <thead>
 		<tr>
 		  <th>Title</th>
 		  <th>Author</th>
-		  <th>Checked</th>
+		  <th>pages</th>
+		  <th>Checked out</th>
 		</tr>
 	  </thead>
 	  <tbody>
@@ -12,6 +15,7 @@
 		  <tr>
 			<td>{{ book.title }}</td>
 			<td>{{ book.author }}</td>
+			<td>{{ book.pages }}</td>
 			<td>{{ book.checkedOut }}</td>
 			<td>
 				<!-- this component exist inside of a router outlet,
@@ -21,8 +25,18 @@
 				exist inside of a router outlet -->
 				<button (click)="routeToBook(book.id)">Details</button>
 			</td>
+			<td>
+				<button (click)="updateBook(book.id, book)">📝</button>
+			</td>
+			<td>
+				<button (click)="deleteBook(book.id)">🗑️</button>
+			</td>
 		  </tr>
 		}
 	  </tbody>
 	</table>
+  } @else { 
+	<div>
+	  <h2>Loading books...</h2>
+	</div>
   }

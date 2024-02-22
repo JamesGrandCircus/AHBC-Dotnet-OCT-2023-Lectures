@@ -12,6 +12,7 @@ import { Book } from '../../models/book';
   styleUrl: './books-table.component.css'
 })
 export class BooksTableComponent {
+
   constructor(
     private libraryService: LibraryService,
     private router: Router) { }
@@ -20,5 +21,17 @@ export class BooksTableComponent {
 
   routeToBook(id: number) {
     this.router.navigate(['book', id]);
+  }
+
+
+  deleteBook(id: number) {
+
+    this.libraryService.deleteBook(id).subscribe(() => {
+      this.books$ = this.libraryService.getBooks();
+    })
+  }
+
+  updateBook(id: number, book: Book) {
+    this.router.navigate(['update-book', id], { queryParams: book });
   }
 }

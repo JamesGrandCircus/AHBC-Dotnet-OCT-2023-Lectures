@@ -52,19 +52,25 @@ namespace Unit_9_API.Controllers
 
             // the book reference will AUTO update for you... so you can get that newly created ID!
             var id = book.Entity.Id;
-            return Created($"/api/library/{id}", value);
+            return Created($"/api/library/{id}", book);
         }
 
         // PUT api/<LibraryController>/5
         [HttpPut("{id}")]
-        public IActionResult Put([FromRoute] int id, [FromBody] string value)
+        public IActionResult Put([FromRoute] int id, [FromBody] Book updatedBook)
         {
 
-            int number;
+            var book = _libraryContext.Books.Find(id);
 
-            if (id < 10)
+            if (book != null)
             {
-                return Created("/api/[controller]/{id}", value);
+                book.Author = updatedBook.Author;
+                book.CheckedOut = updatedBook.CheckedOut;
+                book.Title = updatedBook.Title;
+                book.Pages = updatedBook.Pages;
+                _libraryContext.Books.Update(book);
+                _libraryContext.SaveChanges();
+                return Created($"/api/library/{id}", book);
             }
 
             return NotFound();

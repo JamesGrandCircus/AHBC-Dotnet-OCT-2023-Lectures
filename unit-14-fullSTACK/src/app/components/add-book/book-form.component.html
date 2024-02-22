@@ -1,0 +1,23 @@
+<form (ngSubmit)="handleBookSubmission()">
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="text" id="title" [(ngModel)]="title" name="title" required>
+	</div>
+
+	<div class="form-group">
+		<label for="author">Author</label>
+		<input type="text" id="author" [(ngModel)]="author" name="author" required>
+	</div>
+
+	<div class="form-group">
+		<label for="pages">Pages</label>
+		<input type="number" id="pages" [(ngModel)]="pages" name="pages" required>
+	</div>
+
+	<div class="form-group">
+		<label for="checkedOut">checked out</label>
+		<input type="checkbox" [(ngModel)]="checkedOut" name="checkedOut" id="checkedOut" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">Add Book</button>
+</form>

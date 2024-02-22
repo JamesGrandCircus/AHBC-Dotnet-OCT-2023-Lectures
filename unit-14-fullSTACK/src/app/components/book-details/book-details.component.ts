@@ -19,13 +19,19 @@ export class BookDetailsComponent implements OnInit {
   paramsSubscription!: Subscription
   book: Book | null = null;
 
+
+  // names.Select(name => name.ToUpper()).ToList();
   ngOnInit(): void {
+
     this.paramsSubscription = this.activatedRoute.params.subscribe(params => {
+
       const id = params['id'];
 
       this.libraryService.getBook(id).subscribe(book => {
         this.book = book;
-      })
+      });
+
     })
+
   }
 }
